@@ -11,6 +11,8 @@ import SkillThree from "@/assets/typescript.png";
 import SkillFour from "@/assets/mysql.png";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import FooterPage from "@/components/common/footer";
+import { HeroParallax } from "@/components/ui/hero-parallax";
+import { dataProducts } from "@/components/config/products";
 export default function Home() {
   return (
     <>
@@ -138,9 +140,15 @@ export default function Home() {
           </div>
         </div>
         {/* end SKill */}
+
+        {/* PROJECT */}
+        <div className="mt-12 py-40 px-40 md:py-20 space-y-11">
+          <HeroParallax products={dataProducts} />
+        </div>
         <div className="mt-12">
           <FooterPage />
         </div>
+        {/* End Project */}
       </BackgroundRippleEffect>
     </>
   );
