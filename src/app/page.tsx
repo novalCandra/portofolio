@@ -75,21 +75,28 @@ export default function Home() {
                     </div>
                     <div
                       title="Instagram"
-                      className="flex flex-col lg:flex-row "
+                      className="flex flex-col lg:flex-row"
                     >
-                      <div className="flex md:flex-col lg:flex-row gap-2">
+                      <a
+                        href="https://www.instagram.com/oh_my33ll?igsh=NGluYXRkaWYzdXo0"
+                        className="flex md:flex-col lg:flex-row gap-2"
+                      >
                         <Instagram className="bg-linear-to-tr from-yellow-500 via-purple-500 to-pink-500 bg-clip-text bg-transparent" />
                         <p className="mx-auto">oh_myv33ll</p>
-                      </div>
+                      </a>
                     </div>
                     <div
                       title="Linkedin"
                       className="flex flex-col md:flex-row "
                     >
-                      <div className="flex md:flex-col lg:flex-row gap-2">
+                      <a
+                        href="https://www.linkedin.com/in/novel-candra-ab6329370/"
+                        className="flex md:flex-col lg:flex-row gap-2"
+                        target="_blank"
+                      >
                         <Linkedin className="text-blue-500" />
                         <p className="mx-auto">NovelCandra</p>
-                      </div>
+                      </a>
                     </div>
                     <div title="Twitter" className="flex flex-col md:flex-row">
                       <div className="flex md:flex-col lg:flex-row gap-2">
