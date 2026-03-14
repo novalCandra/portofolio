@@ -18,12 +18,12 @@ export default function Home() {
     <>
       <BackgroundRippleEffect rows={40} cols={40} cellSize={60}>
         <Navbar />
-        <div className=" max-h-2/5 overflow-hidden">
+        <div className="w-full overflow-hidden" id="home">
           <MacbookScroll
             title={
-              <div className="text-5xl font-mono text-center">
+              <div className="text-2xl md:text-4xl lg:text-5xl font-mono text-center">
                 My Portofolio{" "}
-                <span className="bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
                   NovelCandra
                 </span>
               </div>
@@ -48,14 +48,15 @@ export default function Home() {
             showGradient={false}
           />
         </div>
-        <div className="flex mt-0 md:mt-40 justify-center">
-          <Card className="flex mx-auto w-300 py-10 px-10 shadow-[6px_6px_0px_skyblue]">
+        <div className="flex mt-0 md:mt-40 justify-center" id="profile">
+          <Card className="flex mx-auto w-full max-w-5xl py-30 px-10 shadow-[6px_6px_0px_skyblue]">
             <CardHeader>
-              <div className="flex flex-1 justify-between">
+              <div className="flex flex-col md:flex-row flex-1 justify-between items-center gap-6">
                 <Image
                   src={ImageMe}
                   alt="Foto Image"
-                  width={"200"}
+                  width={200}
+                  height={200}
                   className="rounded-2xl"
                 />
                 <div className="flex flex-col justify-center text-center mx-auto">
@@ -66,33 +67,35 @@ export default function Home() {
                     Sofware Engginer & Conten Creator
                   </span>
                   <div className="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-12 cursor-pointer mt-12">
-                    <div
-                      title="Youtube"
-                      className="flex flex-col md:flex-row gap-2"
-                    >
-                      <Youtube className="text-red-500" />
-                      <p>SabcanDev</p>
+                    <div title="Youtube" className="flex flex-col md:flex-row ">
+                      <div className="flex md:flex-col lg:flex-row gap-2">
+                        <Youtube className="text-red-500" />
+                        <p className="mx-auto">SabcanDev</p>
+                      </div>
                     </div>
                     <div
                       title="Instagram"
-                      className="flex flex-col md:flex-row gap-2"
+                      className="flex flex-col lg:flex-row "
                     >
-                      <Instagram className="bg-gradient-to-tr from-yellow-500 via-purple-500 to-pink-500 bg-clip-text bg-transparent" />
-                      <p>oh_myv33ll</p>
+                      <div className="flex md:flex-col lg:flex-row gap-2">
+                        <Instagram className="bg-linear-to-tr from-yellow-500 via-purple-500 to-pink-500 bg-clip-text bg-transparent" />
+                        <p className="mx-auto">oh_myv33ll</p>
+                      </div>
                     </div>
                     <div
                       title="Linkedin"
-                      className="flex flex-col md:flex-row gap-2"
+                      className="flex flex-col md:flex-row "
                     >
-                      <Linkedin className="text-blue-500" />
-                      <p>NovelCandra</p>
+                      <div className="flex md:flex-col lg:flex-row gap-2">
+                        <Linkedin className="text-blue-500" />
+                        <p className="mx-auto">NovelCandra</p>
+                      </div>
                     </div>
-                    <div
-                      title="Twitter"
-                      className="flex flex-col md:flex-row gap-2"
-                    >
-                      <Twitter className="text-green-400" />
-                      <p>NovelCandra</p>
+                    <div title="Twitter" className="flex flex-col md:flex-row">
+                      <div className="flex md:flex-col lg:flex-row gap-2">
+                        <Twitter className="text-green-400" />
+                        <p className="mx-auto">NovelCandra</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -102,10 +105,10 @@ export default function Home() {
         </div>
 
         {/* SKILL */}
-        <div className="mt-12 px-40 space-x-2.5">
+        <div className="mt-12 px-4 md:px-20 lg:px-40 space-x-2.5" id="skills">
           <h2 className="text-2xl font-mono">Skills mastered</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 mt-12 gap-12">
-            <Card className="w-96">
+            <Card className="w-full">
               <CardContent>
                 <div className="flex flex-1 gap-2.5 items-center">
                   <Image src={Skillone} alt="react Js" width={"100"} />
@@ -113,7 +116,7 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-96">
+            <Card className="w-full">
               <CardContent>
                 <div className="flex flex-1 gap-2.5 items-center">
                   <Image src={SkillTwo} alt="react Js" width={"100"} />
@@ -121,7 +124,7 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-96">
+            <Card className="w-full">
               <CardContent>
                 <div className="flex flex-1 gap-2.5 items-center">
                   <Image src={SkillThree} alt="react Js" width={"100"} />
@@ -129,7 +132,7 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-96">
+            <Card className="w-full">
               <CardContent>
                 <div className="flex flex-1 gap-2.5 items-center">
                   <Image src={SkillFour} alt="react Js" width={"100"} />
@@ -142,7 +145,10 @@ export default function Home() {
         {/* end SKill */}
 
         {/* PROJECT */}
-        <div className="mt-12 py-40 px-40 md:py-20 space-y-11">
+        <div
+          className="mt-12 py-10 px-4 md:py-20 md:px-10 lg:px-40 space-y-11"
+          id="project"
+        >
           <HeroParallax products={dataProducts} />
         </div>
         <div className="mt-12">
