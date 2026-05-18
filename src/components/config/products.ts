@@ -24,4 +24,40 @@ export const dataProducts: TypeProducts[] = [
     title: "BRIGIDA",
     thumbnail: "/img/project_five.png",
   },
+  {
+    id: 4,
+    link: "#",
+    title: "DBN",
+    thumbnail: "/img/project_six.png",
+  },
+  {
+    id: 5,
+    link: "#",
+    title: "AutoDev",
+    thumbnail: "/img/project_seven.png",
+  },
+  {
+    id: 6,
+    link: "https://nasgorsantuy.vercel.app/",
+    title: "NasgorSantuy",
+    thumbnail: "/img/project_eight.png"
+  },
+  {
+    id: 7,
+    link: "#",
+    title: "NOWA.IO",
+    thumbnail: "/img/image.png"
+  },
+  {
+    id: 8,
+    link: "#",
+    title: "Dunia coding",
+    thumbnail: "/img/sertifikat.jpg"
+  },
+  {
+    id: 9,
+    link: "#",
+    title: "Dunia Coding",
+    thumbnail: "/img/sertifikat_one.jpg"
+  }
 ];

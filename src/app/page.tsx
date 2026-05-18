@@ -21,7 +21,7 @@ export default function Home() {
         <div className="w-full overflow-hidden" id="home">
           <MacbookScroll
             title={
-              <div className="text-2xl md:text-4xl lg:text-5xl font-mono text-center">
+              <div className="text-5xl md:text-4xl font-mono text-center">
                 My Portofolio{" "}
                 <span className="bg-linear-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
                   NovelCandra
@@ -112,7 +112,7 @@ export default function Home() {
         </div>
 
         {/* SKILL */}
-        <div className="mt-12 px-4 md:px-20 lg:px-40 space-x-2.5" id="skills">
+        <div className="mt-12 px-4 md:px-20 lg:px-40 space-x-2.5 cursor-pointer" id="skills">
           <h2 className="text-2xl font-mono">Skills mastered</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 mt-12 gap-12">
             <Card className="w-full">
