@@ -27,6 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <meta name="google-site-verification" content="UGKWSL_QEI40ttRHw36PQdWZ39DEcLBqaQTGthC-264" />
+      <meta name="description" content="Portofolio NovelCandra" />
+      <meta name="keywords" content="NovelCandra" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
