@@ -14,7 +14,7 @@ export const dataProducts: TypeProducts[] = [
   },
   {
     id: 2,
-    link: "#",
+    link: "https://github.com/novalCandra/Saweria",
     title: "SAWERIA",
     thumbnail: "/img/project_four.png",
   },
@@ -44,7 +44,7 @@ export const dataProducts: TypeProducts[] = [
   },
   {
     id: 7,
-    link: "#",
+    link: "https://cms-nowa.vercel.app",
     title: "NOWA.IO",
     thumbnail: "/img/image.png"
   },
@@ -59,5 +59,35 @@ export const dataProducts: TypeProducts[] = [
     link: "#",
     title: "Dunia Coding",
     thumbnail: "/img/sertifikat_one.jpg"
-  }
+  },
+  {
+    id: 10,
+    link: "https://pmrsketsu.netlify.app/",
+    title: "PMR SKETSU",
+    thumbnail: "/img/pmr.png"
+  },
+  {
+    id: 11,
+    link: "https://viraoliv.vercel.app",
+    title: "ViraOliv",
+    thumbnail: "/img/vira.png"
+  },
+  {
+    id: 12,
+    link: "https://viraoliv.vercel.app",
+    title: "MACHINE LEARNING MOTOGP",
+    thumbnail: "/img/motogp.png"
+  },
+  {
+    id: 13,
+    link: "#",
+    title: "INVOIX",
+    thumbnail: "/img/invoix.png"
+  },
+  {
+    id: 14,
+    link: "#",
+    title: "BUILDWANGGA",
+    thumbnail: "/img/sertikat_nine.png"
+  },
 ];
