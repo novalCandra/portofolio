@@ -8,7 +8,7 @@ type TypeProducts = {
 export const dataProducts: TypeProducts[] = [
   {
     id: 1,
-    link: "#",
+    link: "https://github.com/novalCandra/cms-helms",
     title: "HELM HUB",
     thumbnail: "/img/project_one.png",
   },
@@ -74,7 +74,7 @@ export const dataProducts: TypeProducts[] = [
   },
   {
     id: 12,
-    link: "https://viraoliv.vercel.app",
+    link: "https://ml-prediksimotogp-iuyehsgdnmqtwvo4dqzkmk.streamlit.app",
     title: "MACHINE LEARNING MOTOGP",
     thumbnail: "/img/motogp.png"
   },
@@ -90,4 +90,22 @@ export const dataProducts: TypeProducts[] = [
     title: "BUILDWANGGA",
     thumbnail: "/img/sertikat_nine.png"
   },
+  {
+    id: 15,
+    link: "https://vercel.com/sabcans-projects/sass",
+    title: "Bridge",
+    thumbnail: "/img/project_nine.png"
+  },
+  {
+    id: 16,
+    link: "#",
+    title: "VIRA",
+    thumbnail: "/img/project_tweleve.png"
+  },
+  {
+    id: 17,
+    link: "#",
+    title: "Project Managements",
+    thumbnail: "/img/projectManager.png"
+  }
 ];
