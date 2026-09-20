@@ -172,7 +172,7 @@ export default function Home() {
 
       {/* PROJECT */}
       <div
-        className="mt-12 px-4 md:py-20 md:px-10 lg:px-40 space-y-11 bg-red-500"
+        className="mt-12 px-4 md:py-20 md:px-10 lg:px-40 space-y-11"
         id="project"
       >
         <HeroParallax products={dataProducts} />
