@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, useMemo, useRef, useState } from "react";
+import React, { ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const BackgroundRippleEffect = ({
@@ -19,25 +19,42 @@ export const BackgroundRippleEffect = ({
   } | null>(null);
   const [rippleKey, setRippleKey] = useState(0);
   const ref = useRef<any>(null);
+  const [viewportW, setViewportW] = useState(1440);
+
+  useEffect(() => {
+    const update = () => setViewportW(window.innerWidth);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  // Adapt grid density to screen size: fewer cells on phones / small laptops
+  // to avoid a 2400px-wide grid and 1600 DOM nodes on mobile.
+  const responsive = useMemo(() => {
+    if (viewportW < 640) return { rows: 12, cols: 8, cellSize: Math.min(cellSize, 48) };
+    if (viewportW < 1024) return { rows: 18, cols: 14, cellSize: Math.min(cellSize, 52) };
+    if (viewportW < 1440) return { rows: Math.min(rows, 24), cols: Math.min(cols, 24), cellSize };
+    return { rows, cols, cellSize };
+  }, [viewportW, rows, cols, cellSize]);
 
   return (
-    <div className="relative w-full min-h-screen">
+    <div className="relative min-h-screen w-full max-w-full overflow-x-clip">
       <div
         ref={ref}
         className={cn(
-          "absolute inset-0 h-full w-full",
+          "absolute inset-0 h-full w-full overflow-hidden",
           "[--cell-border-color:var(--color-neutral-300)] [--cell-fill-color:var(--color-neutral-100)] [--cell-shadow-color:var(--color-neutral-500)]",
           "dark:[--cell-border-color:var(--color-neutral-700)] dark:[--cell-fill-color:var(--color-neutral-900)] dark:[--cell-shadow-color:var(--color-neutral-800)]",
         )}
       >
-        <div className="relative h-auto w-auto overflow-hidden">
+        <div className="relative h-auto w-full overflow-hidden">
           <div className="pointer-events-none absolute inset-0 z-[2] h-full w-full overflow-hidden" />
           <DivGrid
             key={`base-${rippleKey}`}
             className="mask-radial-from-20% mask-radial-at-top opacity-600"
-            rows={rows}
-            cols={cols}
-            cellSize={cellSize}
+            rows={responsive.rows}
+            cols={responsive.cols}
+            cellSize={responsive.cellSize}
             borderColor="var(--cell-border-color)"
             fillColor="var(--cell-fill-color)"
             clickedCell={clickedCell}
@@ -49,7 +66,7 @@ export const BackgroundRippleEffect = ({
           />
         </div>
       </div>
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10 w-full max-w-full">{children}</div>
     </div>
   );
 };

@@ -15,15 +15,43 @@ import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect
 import FooterPage from "@/components/common/footer";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { dataProducts } from "@/components/config/products";
+
+const socials = [
+  { title: "Youtube", icon: Youtube, label: "SabcanDev", href: null, iconClass: "text-red-500" },
+  {
+    title: "Instagram",
+    icon: Instagram,
+    label: "oh_myv33ll",
+    href: "https://www.instagram.com/oh_my33ll?igsh=NGluYXRkaWYzdXo0",
+    iconClass: "text-pink-500",
+  },
+  {
+    title: "Linkedin",
+    icon: Linkedin,
+    label: "NovelCandra",
+    href: "https://www.linkedin.com/in/novel-candra-ab6329370/",
+    iconClass: "text-blue-500",
+  },
+  { title: "Twitter", icon: Twitter, label: "NovelCandra", href: null, iconClass: "text-green-400" },
+];
+
+const skills = [
+  { img: Skillone, label: "React Js", alt: "React Js" },
+  { img: SkillTwo, label: "Javascript", alt: "Javascript" },
+  { img: SkillThree, label: "Typescript", alt: "Typescript" },
+  { img: SkillFour, label: "Mysql", alt: "Mysql" },
+  { img: SkillFive, label: "Sass", alt: "Sass" },
+  { img: SkillSix, label: "Tailwind", alt: "Tailwind CSS" },
+];
+
 export default function Home() {
   return (
-
     <BackgroundRippleEffect rows={40} cols={40} cellSize={60}>
       <Navbar />
-      <div className="w-full overflow-hidden" id="home">
+      <div className="w-full max-w-full overflow-x-clip" id="home">
         <MacbookScroll
           title={
-            <div className="text-5xl md:text-4xl font-mono text-center">
+            <div className="px-4 text-center font-mono text-3xl text-balance sm:text-4xl lg:text-5xl">
               My Portofolio{" "}
               <span className="bg-linear-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
                 NovelCandra
@@ -34,15 +62,17 @@ export default function Home() {
             <div className="flex gap-2 -rotate-12 transform">
               <Image
                 src={"/svg/vscode.svg"}
-                width={40}
-                height={40}
-                alt="logo"
+                width={32}
+                height={32}
+                alt="vscode logo"
+                className="h-8 w-8 sm:h-10 sm:w-10"
               />
               <Image
                 src={"/svg/typescript.svg"}
-                width={40}
-                height={40}
-                alt="logo"
+                width={32}
+                height={32}
+                alt="typescript logo"
+                className="h-8 w-8 sm:h-10 sm:w-10"
               />
             </div>
           }
@@ -50,63 +80,53 @@ export default function Home() {
           showGradient={false}
         />
       </div>
-      <div className="flex mt-0 md:mt-40 justify-center" id="profile">
-        <Card className="flex mx-auto w-full max-w-5xl py-30 px-10 shadow-[6px_6px_0px_skyblue]">
-          <CardHeader>
-            <div className="flex flex-col md:flex-row flex-1 justify-between items-center gap-6">
+
+      {/* PROFILE */}
+      <div className="flex w-full justify-center px-4 sm:px-6 lg:px-8" id="profile">
+        <Card className="w-full max-w-5xl px-4 py-8 shadow-[6px_6px_0px_skyblue] sm:px-6 sm:py-10 lg:px-10 lg:py-12">
+          <CardHeader className="px-0 sm:px-2">
+            <div className="flex flex-col items-center gap-6 lg:flex-row lg:items-start lg:gap-10">
               <Image
                 src={ImageMe}
                 alt="Foto Image"
                 width={200}
                 height={200}
-                className="rounded-2xl"
+                className="h-36 w-36 shrink-0 rounded-2xl object-cover sm:h-44 sm:w-44 lg:h-50 lg:w-50"
               />
-              <div className="flex flex-col justify-center text-center mx-auto">
-                <h2 className="text-2xl font-sans">
+              <div className="flex w-full flex-1 flex-col justify-center text-center lg:text-left">
+                <h2 className="text-xl font-sans font-semibold sm:text-2xl">
                   MOH. NOVEL CANDRA DINATA
                 </h2>
-                <p className="text-muted-foreground italic">
-                  HI &apos; Junior full Stack developer and Content Creator  <br />
+                <p className="mt-2 text-sm text-muted-foreground italic sm:text-base">
+                  HI &apos; Junior full Stack developer and Content Creator <br />
                   I &apos; From Jawa Timur Indonesia <br /> I successfully completed both school and bootcamp.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-12 cursor-pointer mt-12">
-                  <div title="Youtube" className="flex flex-col md:flex-row ">
-                    <div className="flex md:flex-col lg:flex-row gap-2">
-                      <Youtube className="text-red-500" />
-                      <p className="mx-auto">SabcanDev</p>
-                    </div>
-                  </div>
-                  <div
-                    title="Instagram"
-                    className="flex flex-col lg:flex-row"
-                  >
-                    <a
-                      href="https://www.instagram.com/oh_my33ll?igsh=NGluYXRkaWYzdXo0"
-                      className="flex md:flex-col lg:flex-row gap-2"
-                    >
-                      <Instagram className="bg-linear-to-tr from-yellow-500 via-purple-500 to-pink-500 bg-clip-text bg-transparent" />
-                      <p className="mx-auto">oh_myv33ll</p>
-                    </a>
-                  </div>
-                  <div
-                    title="Linkedin"
-                    className="flex flex-col md:flex-row "
-                  >
-                    <a
-                      href="https://www.linkedin.com/in/novel-candra-ab6329370/"
-                      className="flex md:flex-col lg:flex-row gap-2"
-                      target="_blank"
-                    >
-                      <Linkedin className="text-blue-500" />
-                      <p className="mx-auto">NovelCandra</p>
-                    </a>
-                  </div>
-                  <div title="Twitter" className="flex flex-col md:flex-row">
-                    <div className="flex md:flex-col lg:flex-row gap-2">
-                      <Twitter className="text-green-400" />
-                      <p className="mx-auto">NovelCandra</p>
-                    </div>
-                  </div>
+                <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+                  {socials.map((s) => {
+                    const Icon = s.icon;
+                    const inner = (
+                      <span className="flex items-center justify-center gap-2 lg:justify-start">
+                        <Icon className={`h-5 w-5 shrink-0 ${s.iconClass}`} />
+                        <span className="truncate text-sm sm:text-base">{s.label}</span>
+                      </span>
+                    );
+                    return (
+                      <div key={s.title} title={s.title} className="flex justify-center lg:justify-start">
+                        {s.href ? (
+                          <a
+                            href={s.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="transition-opacity hover:opacity-80"
+                          >
+                            {inner}
+                          </a>
+                        ) : (
+                          inner
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -115,69 +135,32 @@ export default function Home() {
       </div>
 
       {/* SKILL */}
-      <div className="mt-12 px-4 md:px-20 lg:px-40 space-x-2.5 cursor-pointer" id="skills">
-        <h2 className="text-2xl font-mono">Skills mastered</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 mt-12 gap-x-20 gap-y-10">
-          <Card className="w-full md:w-70 lg:w-80">
-            <CardContent>
-              <div className="flex flex-1 gap-2.5 items-center">
-                <Image src={Skillone} alt="react Js" className="h-30 w-30" />
-                <p className="text-2xl font-mono">React Js</p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="w-full md:w-70 lg:w-80">
-            <CardContent>
-              <div className="flex flex-1 gap-2.5 items-center">
-                <Image src={SkillTwo} alt="react Js" className="h-30 w-30" />
-                <p className="text-2xl font-mono">Javascript</p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="w-full md:w-70 lg:w-80">
-            <CardContent>
-              <div className="flex flex-1 gap-2.5 items-center">
-                <Image src={SkillThree} alt="react Js" className="h-30 w-30" />
-                <p className="text-2xl font-mono">Typescript</p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="w-full md:w-70 lg:w-80">
-            <CardContent>
-              <div className="flex flex-1 gap-2.5 items-center">
-                <Image src={SkillFour} alt="react Js" className="h-30 w-30" />
-                <p className="text-2xl font-mono">Mysql</p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="w-full md:w-70 lg:w-80">
-            <CardContent>
-              <div className="flex flex-1 gap-2.5 items-center">
-                <Image src={SkillFive} alt="react Js" className="h-30 w-30" />
-                <p className="text-2xl font-mono">Sass</p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="w-full md:w-70 lg:w-80">
-            <CardContent>
-              <div className="flex flex-1 gap-2.5 items-center">
-                <Image src={SkillSix} alt="react Js" className="h-30 w-30" />
-                <p className="text-2xl font-mono">Tailwind</p>
-              </div>
-            </CardContent>
-          </Card>
+      <div className="mx-auto mt-12 w-full max-w-7xl px-4 sm:px-6 lg:px-8" id="skills">
+        <h2 className="text-xl font-mono sm:text-2xl">Skills mastered</h2>
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+          {skills.map((skill) => (
+            <Card key={skill.label} className="w-full">
+              <CardContent>
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <Image
+                    src={skill.img}
+                    alt={skill.alt}
+                    className="h-16 w-16 shrink-0 object-contain sm:h-20 sm:w-20"
+                  />
+                  <p className="text-xl font-mono sm:text-2xl">{skill.label}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
       {/* end SKill */}
 
       {/* PROJECT */}
-      <div
-        className="mt-12 px-4 md:py-20 md:px-10 lg:px-40 space-y-11"
-        id="project"
-      >
+      <div className="mt-8 w-full sm:mt-12" id="project">
         <HeroParallax products={dataProducts} />
       </div>
-      <div className="mt-12">
+      <div className="mt-8 sm:mt-12">
         <FooterPage />
       </div>
       {/* End Project */}

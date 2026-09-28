@@ -44,9 +44,12 @@ export const MacbookScroll = ({
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (window && window.innerWidth < 768) {
-      setIsMobile(true);
-    }
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const scaleX = useTransform(
@@ -67,14 +70,14 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="flex min-h-[200vh] shrink-0 scale-[0.6] transform flex-col items-center justify-start py-0 perspective-midrange sm:scale-75 md:scale-100 md:py-50"
+      className="flex min-h-[110vh] w-full max-w-full shrink-0 flex-col items-center justify-start overflow-hidden px-4 py-0 sm:min-h-[150vh] md:min-h-[200vh] md:py-20"
     >
       <motion.h2
         style={{
           translateY: textTransform,
           opacity: textOpacity,
         }}
-        className="mb-20 text-center text-3xl font-bold text-neutral-800 dark:text-white"
+        className="mb-8 px-4 text-center text-2xl font-bold text-neutral-800 sm:mb-12 sm:text-3xl md:mb-20 md:text-4xl dark:text-white"
       >
         {title || (
           <span>
@@ -91,7 +94,7 @@ export const MacbookScroll = ({
         translate={translate}
       />
       {/* Base area */}
-      <div className="relative -z-10 h-[22rem] w-[32rem] overflow-hidden rounded-2xl bg-gray-200 dark:bg-[#272729]">
+      <div className="relative -z-10 h-[14rem] w-[22rem] overflow-hidden rounded-2xl bg-gray-200 sm:h-[18rem] sm:w-[28rem] md:h-[22rem] md:w-[32rem] dark:bg-[#272729]">
         {/* above keyboard bar */}
         <div className="relative h-10 w-full">
           <div className="absolute inset-x-0 mx-auto h-4 w-[80%] bg-[#050505]" />
@@ -139,7 +142,7 @@ export const Lid = ({
           transformOrigin: "bottom",
           transformStyle: "preserve-3d",
         }}
-        className="relative h-[12rem] w-[32rem] rounded-2xl bg-[#010101] p-2"
+        className="relative h-[8rem] w-[22rem] rounded-2xl bg-[#010101] p-2 sm:h-[10rem] sm:w-[28rem] md:h-[12rem] md:w-[32rem]"
       >
         <div
           style={{
@@ -161,7 +164,7 @@ export const Lid = ({
           transformStyle: "preserve-3d",
           transformOrigin: "top",
         }}
-        className="absolute inset-0 h-96 w-[32rem] rounded-2xl bg-[#010101] p-2"
+        className="absolute inset-0 h-64 w-[22rem] rounded-2xl bg-[#010101] p-2 sm:h-80 sm:w-[28rem] md:h-96 md:w-[32rem]"
       >
         <div className="absolute inset-0 rounded-lg bg-[#272729]" />
         <img

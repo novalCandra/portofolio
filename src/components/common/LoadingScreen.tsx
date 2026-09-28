@@ -39,7 +39,7 @@ export default function LoadingScreen() {
                   duration: 0.8,
                   ease: [0.16, 1, 0.3, 1]
                 }}
-                className="text-5xl md:text-7xl font-bold tracking-tighter"
+                className="px-2 text-4xl font-bold tracking-tighter sm:text-5xl md:text-7xl"
               >
                 Novel<span className="bg-linear-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">Candra</span>
               </motion.h1>
